@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    $(".btn_show").click(function(){
-        $(".slideShow").slideToggle("slow");
-      }); 
+function showReport() { 
+  $(document).ready(function(){
+        $("#report").slideToggle("fast");
 });
+}

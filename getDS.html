@@ -149,13 +149,13 @@
     <script src="./js/jquery.min.js"></script>
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/jquery-google-sheet-to-json.min.js"></script>
-    <script>
+    <!-- <script>
         $(document).ready(function(){
-            $(".xxx").click(function(){
+            $("#xxx").click(function(){
                 $(".slideShow").slideToggle("fast");
             }); 
         });
-    </script>
+    </script> -->
 
 </head>
 
@@ -196,13 +196,14 @@
             </form>
             <div id="countHDGV" style="text-align:right;color:red; padding-right:10px">
             </div>
-            <button class="xxx">Hiễn thị báo cáo</button>
+            <button id="xxx" onclick="return showReport();">Ẩn báo cáo</button>
 
             <div id="InfoGV" style="padding: 10px">
   
             </div>
 
             <div class="loading js-loading is-hidden">
+                    
                 <div class="loading-spinner">
                     <svg>
                         <circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>

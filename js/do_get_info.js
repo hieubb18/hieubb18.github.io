@@ -14,7 +14,10 @@ input.addEventListener("keyup", function (event) {
 function stepGetGiangVien() {
     doLoading()
         .then(doGetGiangVien)
-        .then(doComplete);
+        .then(doComplete)
+        .then(display);
+
+
 }
 
 function stepGetSinhVien() {
@@ -38,7 +41,10 @@ function doGetGiangVien() {
         resolve();
     });
 }
+function display(){
+    document.getElementById("xxx").style.display = "block";
 
+}
 function doComplete() {
     return new Promise(function (resolve, reject) {
         setTimeout(() => {
@@ -47,22 +53,17 @@ function doComplete() {
         resolve();
     });
 }
-
-// function showReport() {
-
-//     var worksheets_ID = '1CUEDHydkYSFJUP-t2HhFkfDSvcDeBXIMJCbpNIJ5Vb0'
-//     $.googleSheetToJSON(worksheets_ID)
-//     .done(function (rows) {
-//         rows.forEach(function (row){
-//             Object.getOwnPropertyNames(row).forEach(function (name) {
-//                 var val = [].concat(row[name]).join(' / ');
-//                 strText += "<td>" + val + "</td>";
-//             })
-//         })
-//     })
-
+// function showReport() { 
+//   if(document.getElementById('report').style.display=='none') { 
+//       document.getElementById('report').style.display='block';
+//       document.getElementById('report').style.colSpan='6';  
+//   } 
+//   else
+//   {
+//     document.getElementById('report').style.display='none'; 
+//     document.getElementById('report').style.colSpan='6';  
+//   }
 // }
-
 function giangVienGet() {
 
     var email = $.trim($("input[name='txtGVEmail']").val()).replace(/ /g, '');
@@ -95,7 +96,7 @@ function giangVienGet() {
                     if (strEmail == email && (strDT == sdt || strDT == sdt1)) {
                         count++;
 
-                        strText += '<tr class="slideHide">';
+                        strText += '<tr class="slideHide" >';
                         Object.getOwnPropertyNames(row).forEach(function (name) {
                             if (name == 'tt' || name == 'gvhoten' || name == 'gvemail' || name == 'gvdienthoai')
                                 return;
@@ -116,7 +117,7 @@ function giangVienGet() {
                             if (strM == strn && name == 'noidung') {
                                 // var linkReport = '<a href="#">Click to show </a>' ;
                                 var val = [].concat(row[name]).join(' / ');
-                                strText += '<td  class="slideShow" colspan="6">' + val + "</td>";
+                                strText += '<td id="report" colspan="6">' + val + "</td>";
                                 // strText += '<td rowspan="2">' + linkReport +"</td>";
 
                             }

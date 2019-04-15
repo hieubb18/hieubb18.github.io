@@ -241,6 +241,7 @@ button#xxx {
   border-radius: 3px;
   width: 106px;
   display: none;
+  /* // */
 }
 
 a.submitBC {
@@ -254,4 +255,5 @@ td#report{
   color: #ae3c33;
   text-transform: uppercase;
   border: 1px solid #ccc;
+
 }

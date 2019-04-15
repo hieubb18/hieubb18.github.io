@@ -59,7 +59,7 @@ function sinhVienGet() {
             .done(function (rows) {
                 var strText = "<table border=1>";
                 var strText = "<table class='dtable'>";
-                strText += "<tr> <th>SĐT Giảng Viên</th>  <th>Email GV</th>  <th>Tên GV</th>  <th>Tên SV</th>  <th>Lớp</th> <th>Mã SV</th>  <th>Ngành</th>  <th>Email SV</th>  <th>Số ĐT </th> </tr>  ";
+                strText += "<tr> <th>SĐT Giảng Viên</th>  <th>Email GV</th>  <th>Tên GV</th>  <th>Tên SV</th>  <th>Lớp</th> <th>Mã SV</th>  <th>Ngành</th>  <th>Email SV</th>  <th>Số ĐT </th> <th>Báo cáo</th> ";
                 var count = 0;
                 rows.forEach(function (row) {
                     var strMaSV = row['masv'].replace(/ /g,'');
@@ -71,10 +71,12 @@ function sinhVienGet() {
                                 return;
                             if(name == 'time' || name == 'noidung' || name == 'tendetai' ||name =='masosv' || name == 'hovaten')
                                 return;
-                             var val = [].concat(row[name]).join(' / ');
-                             strText += "<td>" + val + "</td>";
+                            
+                            var val = [].concat(row[name]).join(' / ');
+                            strText += "<td>" + val + "</td>";
                             
                         });
+                        strText += "<td>" + '<a class="submitBC" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScKATGXGag_6Jo721VstyN9RMBEHgmaH62uPIbIPXdxru_HMw/viewform">Nội báo cáo</a>' + "</td>";
                         strText += "</tr>";
                     }
                     return;

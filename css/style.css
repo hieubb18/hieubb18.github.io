@@ -244,3 +244,11 @@ button.xxx {
   border-radius: 3px;
   width: 106px;
 }
+
+a.submitBC {
+  border: 1px solid;
+  padding: 15px 5px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: papayawhip;
+}

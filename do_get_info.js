@@ -67,9 +67,10 @@ function sinhVienGet() {
                         count++;
                         strText += "<tr>";
                         Object.getOwnPropertyNames(row).forEach(function (name) {
-                             if (name == 'tt')
+                             if (name == 'tt' )
                                 return;
-                            
+                            if(name == 'time' || name == 'noidung' || name == 'tendetai' ||name =='masosv' || name == 'hovaten')
+                                return;
                              var val = [].concat(row[name]).join(' / ');
                              strText += "<td>" + val + "</td>";
                             
